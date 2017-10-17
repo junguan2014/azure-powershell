@@ -92,6 +92,19 @@ PS C:\>New-AzureBatchPool -Id "AutoScalePool" -VirtualMachineSize "Small" -OSFam
 This command creates a new pool with ID AutoScalePool using the AutoScale parameter set.
 The pool is configured to use small virtual machines imaged with the latest operating system version of family four, and the target number of compute nodes are determined by the Autoscale formula.
 
+### Example 3: Create a pool with nodes in a subnet
+```
+PS C:\>$networkConfig = New-Object Microsoft.Azure.Commands.Batch.Models.PSNetworkConfiguration
+PS C:\>$networkConfig.SubnetId = "/subscriptions/{subscription}/resourceGroups/{group}/providers/{provider}/virtualNetworks/{network}/subnets/{subnet}"
+PS C:\>New-AzureBatchPool -Id "AutoScalePool" -VirtualMachineSize "Small" -OSFamily "4" -TargetDedicatedComputeNodes 3 -NetworkConfiguration $networkConfig -BatchContext $Context
+```
+
+### Example 4: Create a pool with custom user accounts
+```
+PS C:\>$userAccount = New-Object Microsoft.Azure.Commands.Batch.Models.PSUserAccount -ArgumentList @("myaccount", "mypassword")
+PS C:\>New-AzureBatchPool -Id "AutoScalePool" -VirtualMachineSize "Small" -OSFamily "4" -TargetDedicatedComputeNodes 3 -UserAccounts $userAccount
+```
+
 ## PARAMETERS
 
 ### -ApplicationLicenses
@@ -291,6 +304,8 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkConfiguration
+The network configuration for the pool.
+
 ```yaml
 Type: PSNetworkConfiguration
 Parameter Sets: (All)

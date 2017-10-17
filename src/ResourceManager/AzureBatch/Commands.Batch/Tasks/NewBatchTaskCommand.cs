@@ -61,11 +61,13 @@ namespace Microsoft.Azure.Commands.Batch
         [Parameter(ParameterSetName = JobIdAndSingleAddParameterSet)]
         [Parameter(ParameterSetName = JobObjectAndSingleAddParameterSet)]
         [ValidateNotNullOrEmpty]
+        [Alias("ResourceFile")]
         public IDictionary ResourceFiles { get; set; }
 
         [Parameter(ParameterSetName = JobIdAndSingleAddParameterSet)]
         [Parameter(ParameterSetName = JobObjectAndSingleAddParameterSet)]
         [ValidateNotNullOrEmpty]
+        [Alias("EnvironmentSetting")]
         public IDictionary EnvironmentSettings { get; set; }
 
         [Parameter(ParameterSetName = JobIdAndSingleAddParameterSet)]
@@ -99,12 +101,13 @@ namespace Microsoft.Azure.Commands.Batch
         [Parameter(ParameterSetName = JobIdAndSingleAddParameterSet)]
         [Parameter(ParameterSetName = JobObjectAndSingleAddParameterSet)]
         [ValidateNotNullOrEmpty]
+        [Alias("ApplicationPackageReference")]
         public PSApplicationPackageReference[] ApplicationPackageReferences { get; set; }
 
         [Parameter(ParameterSetName = JobIdAndSingleAddParameterSet)]
         [Parameter(ParameterSetName = JobObjectAndSingleAddParameterSet)]
         [ValidateNotNullOrEmpty]
-        public PSOutputFile[] OutputFiles { get; set; }
+        public PSOutputFile[] OutputFile { get; set; }
 
         [Parameter(ParameterSetName = JobObjectAndBulkAddParameterSet,
             HelpMessage = "The collection of tasks to add to a job.")]
@@ -147,7 +150,7 @@ namespace Microsoft.Azure.Commands.Batch
                     DependsOn = this.DependsOn,
                     ApplicationPackageReferences = this.ApplicationPackageReferences,
                     ExitConditions = this.ExitConditions,
-                    OutputFiles = this.OutputFiles,
+                    OutputFiles = this.OutputFile,
                     ContainerSettings = this.ContainerSettings
                 };
 

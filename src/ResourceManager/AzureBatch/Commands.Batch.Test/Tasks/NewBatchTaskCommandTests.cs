@@ -363,7 +363,7 @@ namespace Microsoft.Azure.Commands.Batch.Test.Tasks
             const string path = "path";
             const OutputFileUploadCondition uploadCondition = OutputFileUploadCondition.TaskCompletion;
 
-            cmdlet.OutputFiles = new[]
+            cmdlet.OutputFile = new[]
             {
                 new PSOutputFile(
                     pattern,

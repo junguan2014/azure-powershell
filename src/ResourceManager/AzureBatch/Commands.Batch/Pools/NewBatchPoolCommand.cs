@@ -89,14 +89,17 @@ namespace Microsoft.Azure.Commands.Batch
 
         [Parameter]
         [ValidateNotNullOrEmpty]
+        [Alias("CertificateReference")]
         public PSCertificateReference[] CertificateReferences { get; set; }
 
         [Parameter]
         [ValidateNotNullOrEmpty]
+        [Alias("ApplicationPackageReference")]
         public PSApplicationPackageReference[] ApplicationPackageReferences { get; set; }
 
         [Parameter]
         [ValidateNotNullOrEmpty]
+        [Alias("ApplicationLicense")]
         public List<string> ApplicationLicenses { get; set; }
 
         [Parameter(ParameterSetName = VirtualMachineAutoScaleParameterSet)]
@@ -115,7 +118,7 @@ namespace Microsoft.Azure.Commands.Batch
 
         [Parameter]
         [ValidateNotNullOrEmpty]
-        public PSUserAccount[] UserAccounts { get; set; }
+        public PSUserAccount[] UserAccount { get; set; }
 
         public override void ExecuteCmdlet()
         {
@@ -138,7 +141,7 @@ namespace Microsoft.Azure.Commands.Batch
                 VirtualMachineConfiguration =  this.VirtualMachineConfiguration,
                 CloudServiceConfiguration = this.CloudServiceConfiguration,
                 NetworkConfiguration = this.NetworkConfiguration,
-                UserAccounts = this.UserAccounts,
+                UserAccounts = this.UserAccount,
                 ApplicationLicenses = this.ApplicationLicenses
             };
 

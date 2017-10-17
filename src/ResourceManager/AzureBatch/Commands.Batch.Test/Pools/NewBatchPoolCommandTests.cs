@@ -261,7 +261,7 @@ namespace Microsoft.Azure.Commands.Batch.Test.Pools
             PSUserAccount adminUser = new PSUserAccount("admin", "password1", Azure.Batch.Common.ElevationLevel.Admin);
             PSUserAccount nonAdminUser = new PSUserAccount("user2", "password2", Azure.Batch.Common.ElevationLevel.NonAdmin);
             PSUserAccount sshUser = new PSUserAccount("user3", "password3", linuxUserConfiguration: new PSLinuxUserConfiguration(uid: 1, gid: 2, sshPrivateKey: "my ssh key"));
-            cmdlet.UserAccounts = new [] { adminUser, nonAdminUser, sshUser };
+            cmdlet.UserAccount = new [] { adminUser, nonAdminUser, sshUser };
 
             PoolAddParameter requestParameters = null;
 

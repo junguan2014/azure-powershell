@@ -79,6 +79,31 @@ namespace Microsoft.Azure.Commands.Batch.Models
         }
 
         /// <summary>
+        /// Get task counts for the specified job.
+        /// </summary>
+        /// <param name="options">Options for GetTaskCounts().</param>
+        /// <returns>The task counts for the specified job.</returns>
+        public PSTaskCounts GetTaskCounts(GetTaskCountsOptions options)
+        {
+            if (options == null)
+            {
+                throw new ArgumentNullException("options");
+            }
+
+            string jobId = options.Job == null ? options.JobId : options.Job.Id;
+
+            if (string.IsNullOrWhiteSpace(jobId))
+            {
+                throw new ArgumentNullException("jobId");
+            }
+
+            WriteVerbose(string.Format(Resources.GetTaskCounts, jobId));
+
+            JobOperations jobOperations = options.Context.BatchOMClient.JobOperations;
+            return new PSTaskCounts(jobOperations.GetJobTaskCounts(jobId, options.AdditionalBehaviors));
+        }
+
+        /// <summary>
         /// Creates a new task.
         /// </summary>
         /// <param name="parameters">The parameters to use when creating the task.</param>

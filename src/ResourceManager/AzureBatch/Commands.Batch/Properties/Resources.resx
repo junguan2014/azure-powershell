@@ -487,4 +487,7 @@
   <data name="UsingSharedKeyAuth" xml:space="preserve">
     <value>Using shared key authentication to interact with the Batch service. Current key in use: {0}. To change keys, set the BatchAccountContext.KeyInUse property. To use Azure Active Directory authentication, supply a BatchAccountContext that was returned from the Get-AzureRmBatchAccount cmdlet.</value>
   </data>
+  <data name="GetTaskCounts" xml:space="preserve">
+    <value>Getting task counts for job {0}.</value>
+  </data>
 </root>

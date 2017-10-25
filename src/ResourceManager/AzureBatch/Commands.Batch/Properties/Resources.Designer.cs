@@ -646,6 +646,15 @@ namespace Microsoft.Azure.Commands.Batch.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Getting task counts for job {0}..
+        /// </summary>
+        internal static string GetTaskCounts {
+            get {
+                return ResourceManager.GetString("GetTaskCounts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Getting all tasks from job &quot;{0}&quot;..
         /// </summary>
         internal static string GetTaskNoFilter {

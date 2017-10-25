@@ -260,6 +260,7 @@
     <Compile Include="ScenarioTests\JobScheduleTests.cs" />
     <Compile Include="Locations\GetBatchLocationQuotasCommandTests.cs" />
     <Compile Include="Tasks\GetBatchSubtaskCommandTests.cs" />
+    <Compile Include="Tasks\GetBatchTaskCountsCommandTests.cs" />
     <Compile Include="Tasks\GetBatchTaskCommandTests.cs" />
     <Compile Include="Tasks\NewBatchTaskCommandTests.cs" />
     <Compile Include="Tasks\RemoveBatchTaskCommandTests.cs" />

@@ -106,6 +106,7 @@ namespace PSModelGenerator
             {"Microsoft.Azure.Batch.TaskConstraints", "PSTaskConstraints"},
             {"Microsoft.Azure.Batch.TaskContainerExecutionInformation", "PSTaskContainerExecutionInformation"},
             {"Microsoft.Azure.Batch.TaskContainerSettings", "PSTaskContainerSettings"},
+            {"Microsoft.Azure.Batch.TaskCounts", "PSTaskCounts"},
             {"Microsoft.Azure.Batch.TaskDependencies", "PSTaskDependencies"},
             {"Microsoft.Azure.Batch.TaskExecutionInformation", "PSTaskExecutionInformation"},
             {"Microsoft.Azure.Batch.TaskInformation", "PSTaskInformation"},

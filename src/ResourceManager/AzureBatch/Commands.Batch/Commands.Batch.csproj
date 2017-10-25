@@ -76,6 +76,7 @@
     <Compile Include="Models\AccountCreateParameters.cs" />
     <Compile Include="Models\BatchClient.ApplicationPackages.cs" />
     <Compile Include="Models\ListJobPreparationAndReleaseStatusOptions.cs" />
+    <Compile Include="Models\GetTaskCountsOptions.cs" />
     <Compile Include="Models\NewBulkTaskParameters.cs" />
     <Compile Include="Models\PSApplicationPackage.cs" />
     <Compile Include="Models\PSApplication.cs" />
@@ -186,6 +187,7 @@
     </Compile>
     <Compile Include="Locations\GetBatchLocationQuotasCommand.cs" />
     <Compile Include="Tasks\GetBatchSubtaskCommand.cs" />
+    <Compile Include="Tasks\GetBatchTaskCountsCommand.cs" />
     <Compile Include="Tasks\GetBatchTaskCommand.cs" />
     <Compile Include="Tasks\NewBatchTaskCommand.cs" />
     <Compile Include="Tasks\RemoveBatchTaskCommand.cs" />
